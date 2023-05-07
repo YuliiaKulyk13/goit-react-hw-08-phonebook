@@ -10,20 +10,31 @@ import { Layout } from './Layout/Layout.styled';
 import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
 import { Notification } from './Notification/Notification';
 import { Loader } from './Loader/Loader';
+import { AppBar } from './AppBar/AppBar';
+import { RegisterForm } from './RegisterForm/RegisterForm';
+import { LoginForm } from './LoginForm/LoginForm';
 
 export function App() {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const contactList = useSelector(selectContacts);
+  // const dispatch = useDispatch();
+  // const isLoading = useSelector(selectIsLoading);
+  // const error = useSelector(selectError);
+  // const contactList = useSelector(selectContacts);
 
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchContacts());
+  // }, [dispatch]);
 
   return (
     <Layout>
-      <Title title={'Phonebook'} />
+      <AppBar />
+      <Switch>
+        <Route exact path="/" component={HomeView} />
+        <Route path="/register" component={RegisterForm} />
+        <Route path="/login" component={LoginForm} />
+        <Route path="/contacts" component={ContactsView} />
+      </Switch>
+
+      {/* <Title title={'Phonebook'} />
       <ContactForm />
       <Title title={'Contacts'} />
 
@@ -33,7 +44,7 @@ export function App() {
       ) : (
         <PhoneContacts />
       )}
-      {isLoading && !error && <Loader />}
+      {isLoading && !error && <Loader />} */}
     </Layout>
   );
 }
