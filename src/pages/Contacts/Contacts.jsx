@@ -26,19 +26,20 @@ export const Contacts = () => {
 
   return (
     <>
-      <Helmet>
-        <Title title={'Phonebook'} />
-      </Helmet>
+      {/* <Title title={'Phonebook'} /> */}
+      <h1>Phonebook</h1>
       <ContactForm />
-      {isLoading && !error && <Loader />}
-      <Title title={'Contacts'} />
-
-      {contactList.length > 0 && <Filter />}
+      {/* {isLoading && !error && <Loader />} */}
+      {/* <Title title={'Contacts'} /> */}
+      <h2>Contacts</h2>
+      <Filter />
+      <PhoneContacts />
+      {/* {contactList.length > 0 && <Filter />}
       {contactList.length === 0 ? (
         <Notification notification={'There are no contacts.'} />
       ) : (
         <PhoneContacts />
-      )}
+      )} */}
     </>
   );
 };

@@ -11,8 +11,8 @@ import { Loader } from './Loader/Loader';
 import { Register } from 'pages/Register/Register';
 import { Login } from 'pages/Login/Login';
 import { Contacts } from 'pages/Contacts/Contacts';
-import { AppBar } from './AppBar/AppBar';
-import { UserMenu } from './UserMenu/UserMenu';
+// import { AppBar } from './AppBar/AppBar';
+// import { UserMenu } from './UserMenu/UserMenu';
 
 export const App = () => {
   const dispatch = useDispatch();
