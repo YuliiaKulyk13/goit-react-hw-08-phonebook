@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
+// import { Toaster } from 'react-hot-toast';
 import { AppBar } from './AppBar/AppBar';
 import { Suspense } from 'react';
-import { useSelector } from 'react-redux';
-import { selectError, selectIsLoading } from 'redux/contacts/selectors';
-import { useAuth } from 'hooks';
-import { Loader } from './Loader/Loader';
+// import { useSelector } from 'react-redux';
+// import { selectError, selectIsLoading } from 'redux/contacts/selectors';
+// import { useAuth } from 'hooks';
+// import { Loader } from './Loader/Loader';
 
 export const Layout = () => {
   //   const contactsLoading = useSelector(selectIsLoading);
