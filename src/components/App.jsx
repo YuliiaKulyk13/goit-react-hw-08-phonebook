@@ -1,50 +1,52 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import PhoneContacts from './PhoneContacts/PhoneContacts';
-import Filter from './Filter/Filter';
-import { Title } from './Title/Title';
-import { ContactForm } from './ContactsForm/ContactsForm';
+import React, { useEffect } from 'react';
 import { Layout } from './Layout/Layout.styled';
-import { selectContacts, selectError, selectIsLoading } from 'redux/selectors';
-import { Notification } from './Notification/Notification';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from '../pages/Home/Home';
+import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks';
+import { refreshUser } from 'redux/user/userOperations';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestricredRoute';
 import { Loader } from './Loader/Loader';
-import { AppBar } from './AppBar/AppBar';
-import { RegisterForm } from './RegisterForm/RegisterForm';
-import { LoginForm } from './LoginForm/LoginForm';
+import { Register } from 'pages/Register/Register';
+import { Login } from 'pages/Login/Login';
+import { Contacts } from 'pages/Contacts/Contacts';
 
-export function App() {
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(selectIsLoading);
-  // const error = useSelector(selectError);
-  // const contactList = useSelector(selectContacts);
+export const App = () => {
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
 
-  return (
-    <Layout>
-      <AppBar />
-      <Switch>
-        <Route exact path="/" component={HomeView} />
-        <Route path="/register" component={RegisterForm} />
-        <Route path="/login" component={LoginForm} />
-        <Route path="/contacts" component={ContactsView} />
-      </Switch>
+  return isRefreshing ? (
+    <Loader />
+  ) : (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
 
-      {/* <Title title={'Phonebook'} />
-      <ContactForm />
-      <Title title={'Contacts'} />
+        <Route
+          path="/register"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RestrictedRoute redirectTo="/contacts" component={<Login />} />
+          }
+        />
 
-      {contactList.length > 0 && <Filter />}
-      {contactList.length === 0 ? (
-        <Notification notification={'There are no contacts.'} />
-      ) : (
-        <PhoneContacts />
-      )}
-      {isLoading && !error && <Loader />} */}
-    </Layout>
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute redirectTo="/login" component={<Contacts />} />
+          }
+        />
+      </Route>
+    </Routes>
   );
-}
+};

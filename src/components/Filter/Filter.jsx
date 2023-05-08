@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Label } from './Filter.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilters } from 'redux/selectors';
+import { selectFilters } from 'redux/contacts/selectors';
 import { filterContacts } from 'redux/contacts/contactSlice';
 
 export const Filter = () => {
@@ -18,5 +18,4 @@ export const Filter = () => {
     </Label>
   );
 };
-
 export default Filter;

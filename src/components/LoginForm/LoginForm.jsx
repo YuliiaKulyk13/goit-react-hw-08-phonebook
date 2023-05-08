@@ -54,7 +54,7 @@ export const LoginForm = () => {
             required
           />
         </label>
-        <button type="submit">Register</button>
+        <button type="submit">Log in</button>
       </form>
     </div>
   );

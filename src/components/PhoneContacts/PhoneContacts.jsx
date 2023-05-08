@@ -6,10 +6,10 @@ import {
   DeleteButton,
   List,
 } from './PhoneContacts.styled';
-import { selectVisibleContacts } from 'redux/selectors';
-import { deleteContact } from 'redux/operations';
+import { selectVisibleContacts } from 'redux/contacts/selectors';
+import { deleteContact } from 'redux/contacts/operations';
 
-const PhoneContacts = () => {
+export const PhoneContacts = () => {
   const dispatch = useDispatch();
   const NewFilteredContactsList = useSelector(selectVisibleContacts);
 
