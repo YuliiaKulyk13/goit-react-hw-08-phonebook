@@ -19,7 +19,7 @@ import { HomePage } from 'pages/Home/HomePage';
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isRefreshing } = useSelector(authSelectors.selectIsRefreshing);
+  const isRefreshing = useSelector(authSelectors.selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUser());
