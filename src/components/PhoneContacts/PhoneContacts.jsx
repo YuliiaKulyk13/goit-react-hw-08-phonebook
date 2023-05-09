@@ -15,10 +15,10 @@ export const PhoneContacts = () => {
 
   return (
     <List>
-      {NewFilteredContactsList.map(({ id, name, phone }) => (
+      {NewFilteredContactsList.map(({ id, name, number }) => (
         <Contact key={id}>
           <ContactItem>
-            {name}: {phone}
+            {name}: {number}
           </ContactItem>
           <DeleteButton onClick={() => dispatch(deleteContact(id))}>
             Delete

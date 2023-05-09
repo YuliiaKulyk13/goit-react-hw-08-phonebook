@@ -5,7 +5,7 @@ export const RegisterPage = () => {
   return (
     <div>
       <Helmet>
-        <h1>Registration</h1>
+        <title>Registration</title>
       </Helmet>
       <RegisterForm />
     </div>

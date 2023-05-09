@@ -21,7 +21,7 @@ export const HomePage = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>
-        Hey there👋🏼! Let's begin to create our contacts 🥳
+        Hey there👋🏼! Let's start to create our phonebook 🥳
       </h1>
     </div>
   );

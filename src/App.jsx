@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { useAuth } from 'hooks';
-import { AppBar } from './components/AppBar/AppBar';
+// import { AppBar } from './components/AppBar/AppBar';
 import { PrivateRoute } from './components/PrivateRoute';
 import { RestrictedRoute } from './components/RestricredRoute';
 import { Layout } from './components/Layout/Layout';
@@ -29,7 +29,6 @@ export const App = () => {
     <>
       {!isRefreshing && (
         <>
-          <AppBar />
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
@@ -52,7 +51,7 @@ export const App = () => {
                 }
               />
               <Route
-                path="/tasks"
+                path="/contacts"
                 element={
                   <PrivateRoute
                     redirectTo="/login"
