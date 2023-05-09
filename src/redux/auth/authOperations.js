@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
+axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
 const token = {
   set(token) {
@@ -56,9 +56,10 @@ export const refreshUser = createAsyncThunk(
     if (persistedToken === null) {
       return thunkAPI.rejectWithValue('Unable to fetch user');
     }
+    token.set(persistedToken);
     try {
       const { data } = await axios.get('/users/current');
-      token.set(data.token);
+
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

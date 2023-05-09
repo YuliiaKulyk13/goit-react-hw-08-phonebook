@@ -14,7 +14,7 @@ import Filter from '../../components/Filter/Filter';
 import { ContactForm } from 'components/ContactsForm/ContactsForm';
 // import { Helmet } from 'react-helmet';
 
-export const Contacts = () => {
+export const ContactsPage = () => {
   const dispatch = useDispatch();
   // const isLoading = useSelector(selectIsLoading);
   // const error = useSelector(selectError);

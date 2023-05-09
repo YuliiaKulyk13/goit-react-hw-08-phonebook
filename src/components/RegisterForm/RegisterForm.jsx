@@ -1,6 +1,6 @@
-// import { useState } from 'react';
+// // import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/user/userOperations';
+import { register } from 'redux/auth/authOperations';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
