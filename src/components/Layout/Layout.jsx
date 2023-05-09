@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 // import { Toaster } from 'react-hot-toast';
-import { AppBar } from './AppBar/AppBar';
+import { AppBar } from '../AppBar/AppBar';
 import { Suspense } from 'react';
 // import { useSelector } from 'react-redux';
 // import { selectError, selectIsLoading } from 'redux/contacts/selectors';
@@ -15,7 +15,7 @@ export const Layout = () => {
   return (
     <div>
       <AppBar />
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
       {/* {isLoading || (contactsLoading && <Loader />)} */}
