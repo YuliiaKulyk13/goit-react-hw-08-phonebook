@@ -15,7 +15,7 @@ export const AppBar = () => {
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
-        <li>{isLoggedIn && <NavLink to="contacts">contacts</NavLink>}</li>
+        <li>{isLoggedIn && <NavLink to="/contacts">contacts</NavLink>}</li>
         {/* <Navigation /> */}
       </ul>
       {isLoggedIn ? <UserMenu /> : <AuthNav />}

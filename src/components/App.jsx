@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
-import { Layout } from './Layout/Layout.styled';
-import { Route, Routes } from 'react-router-dom';
-import { Home } from '../pages/Home/Home';
 import { useDispatch } from 'react-redux';
 import { useAuth } from 'hooks';
 import { refreshUser } from 'redux/user/userOperations';
 import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from './RestricredRoute';
+import { Layout } from './Layout/Layout.styled';
+import { Route, Routes } from 'react-router-dom';
+import { Home } from '../pages/Home/Home';
+
 import { Loader } from './Loader/Loader';
 import { Register } from 'pages/Register/Register';
 import { Login } from 'pages/Login/Login';
@@ -15,12 +16,12 @@ import { Contacts } from 'pages/Contacts/Contacts';
 // import { UserMenu } from './UserMenu/UserMenu';
 
 export const App = () => {
-  const dispatch = useDispatch();
-  const { isRefreshing } = useAuth();
+  // const dispatch = useDispatch();
+  // const { isRefreshing } = useAuth();
 
-  useEffect(() => {
-    dispatch(refreshUser());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(refreshUser());
+  // }, [dispatch]);
 
   // return (
   //   <>
@@ -57,19 +58,14 @@ export const App = () => {
   //     <UserMenu />
   //   </>
   // );
-  return isRefreshing ? (
-    <Loader />
-  ) : (
+  return (
+    // <Loader />
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
 
-        <Route
-          path="/register"
-          element={
-            <RestrictedRoute redirectTo="/contacts" component={<Register />} />
-          }
-        />
+        <Route path="/register" element={<Register />} />
+
         <Route
           path="/login"
           element={
