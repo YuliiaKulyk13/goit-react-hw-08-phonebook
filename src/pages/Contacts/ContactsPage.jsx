@@ -35,7 +35,6 @@ const ContactsPage = () => {
       {isLoading && !error && <Loader />}
       {<Title title={'Contacts'} />}
       {contactList.length > 0 && <Filter />}
-      <PhoneContacts />
       {contactList.length === 0 ? (
         <Notification notification={'There are no contacts.'} />
       ) : (

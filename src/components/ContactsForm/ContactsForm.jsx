@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
 import { AddButton, Form, FormInput, Label } from './ContactsForm.styled';
@@ -44,7 +45,7 @@ export const ContactForm = () => {
     contactList.find(
       contact => contact.name.toLowerCase() === addNewContact.name.toLowerCase()
     )
-      ? alert(`${name}is already in contacts.`)
+      ? toast.error(`${name}is already in contacts.`)
       : dispatch(addContact(addNewContact));
   };
 

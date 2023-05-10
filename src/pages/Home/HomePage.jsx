@@ -2,28 +2,17 @@
 //   <div>
 //     <h1>Hey there👋🏼! Let's begin to create our contacts 🥳</h1>
 //   </div>;
-// };
-const styles = {
-  container: {
-    minHeight: 'calc(100vh - 50px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: 'center',
-  },
-};
+
+import { Container, Title } from './HomePage.styled';
 
 const HomePage = () => {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>
-        Hey there👋🏼! Let's start to create our phonebook 🥳
-      </h1>
-    </div>
+    <Container>
+      <Title>
+        Hey there👋🏼! Here you can create your personal phonebook 📚 Just click
+        button "Register" or "Log in " first and you good to go.
+      </Title>
+    </Container>
   );
 };
 export default HomePage;
