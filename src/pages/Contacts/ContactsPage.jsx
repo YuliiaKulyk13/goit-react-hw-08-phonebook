@@ -18,7 +18,7 @@ import { Loader } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
 // import { Helmet } from 'react-helmet';
 
-export const ContactsPage = () => {
+const ContactsPage = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -31,14 +31,11 @@ export const ContactsPage = () => {
   return (
     <>
       <Title title={'Phonebook'} />
-      {/* <h1>Phonebook</h1> */}
       <ContactForm />
       {isLoading && !error && <Loader />}
       {<Title title={'Contacts'} />}
-      {/* <h2>Contacts</h2> */}
       {contactList.length > 0 && <Filter />}
       <PhoneContacts />
-
       {contactList.length === 0 ? (
         <Notification notification={'There are no contacts.'} />
       ) : (
@@ -47,3 +44,4 @@ export const ContactsPage = () => {
     </>
   );
 };
+export default ContactsPage;

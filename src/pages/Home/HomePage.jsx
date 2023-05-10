@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>
@@ -26,3 +26,4 @@ export const HomePage = () => {
     </div>
   );
 };
+export default HomePage;

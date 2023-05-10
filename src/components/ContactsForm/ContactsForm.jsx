@@ -49,7 +49,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} autoComplete="off">
       <Label htmlFor="name">
         Name
         <FormInput
