@@ -1,33 +1,34 @@
 import styled from 'styled-components';
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
 export const Form = styled.form`
   display: flex;
-  flex-wrap: nowrap;
-  gap: 15px;
-  align-items: center;
-  justify-content: center;
-  justify-content: baseline;
+  flex-direction: column;
+  width: 300px;
+  padding: 10px;
 `;
 
 export const FormInput = styled.input`
-  padding: 3px;
-  border-radius: 8px;
-  margin-left: 10px;
+  padding: 5px;
+  /* margin-left: 10px; */
+  margin-bottom: 20px;
   height: 20px;
-  width: auto;
+  width: 150px;
   cursor: pointer;
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    box-shadow: 10px 5px 5px grey;
-  }
 `;
 
 export const AddButton = styled.button`
-  width: 95px;
-  height: auto;
-  font-size: 12px;
+  display: block;
+  margin-left: 20px;
+  margin-right: auto;
+  min-width: 130px;
+  height: 35px;
+  font-size: 15px;
   padding: 5px;
-  border-radius: 8px;
+  border-radius: 4px;
   background-color: black;
   color: white;
   cursor: pointer;
@@ -40,9 +41,14 @@ export const AddButton = styled.button`
 `;
 
 export const Label = styled.label`
+  display: flex;
+  justify-content: space-between;
   font-weight: 500;
-  font-size: 20px;
-  text-align: center;
-  display: block;
-  color: #222425;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  font-size: 17px;
+  color: white;
 `;

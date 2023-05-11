@@ -1,27 +1,40 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  margin-top: 4px;
-  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
 `;
 
 export const ContactItem = styled.p`
-  color: #3a3c3d;
+  color: white;
+  font-weight: 500;
+  margin-left: 10px;
+  padding: 0;
+  margin: 0;
+  margin-right: 15px;
+  font-style: normal;
 `;
 export const Contact = styled.li`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 20px;
   font-size: 20px;
 `;
 
 export const DeleteButton = styled.button`
-  width: 85px;
-  height: 30px;
-  font-size: 12px;
+  min-width: 80px;
+  height: 35px;
+  font-size: 13px;
   padding: 5px;
-  border-radius: 8px;
-  margin-right: 10px;
+  margin-right: 20px;
+  margin-left: 15px;
+  border-radius: 4px;
   background-color: black;
   color: white;
   cursor: pointer;

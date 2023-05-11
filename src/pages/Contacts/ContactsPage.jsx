@@ -16,6 +16,11 @@ import { useEffect } from 'react';
 import { Title } from 'components/Title/Title';
 import { Loader } from 'components/Loader/Loader';
 import { Notification } from 'components/Notification/Notification';
+import {
+  ContactListContainer,
+  Container,
+  SubContainer,
+} from './ContactsPage.styled';
 // import { Helmet } from 'react-helmet';
 
 const ContactsPage = () => {
@@ -29,18 +34,22 @@ const ContactsPage = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <Title title={'Phonebook'} />
-      <ContactForm />
-      {isLoading && !error && <Loader />}
-      {<Title title={'Contacts'} />}
-      {contactList.length > 0 && <Filter />}
-      {contactList.length === 0 ? (
-        <Notification notification={'There are no contacts.'} />
-      ) : (
-        <PhoneContacts />
-      )}
-    </>
+    <Container>
+      <SubContainer>
+        <Title title={'Phonebook'} />
+        <ContactForm />
+        {isLoading && !error && <Loader />}
+      </SubContainer>
+      <ContactListContainer>
+        {<Title title={'Contacts'} />}
+        {contactList.length > 0 && <Filter />}
+        {contactList.length === 0 ? (
+          <Notification notification={'There are no contacts.'} />
+        ) : (
+          <PhoneContacts />
+        )}
+      </ContactListContainer>
+    </Container>
   );
 };
 export default ContactsPage;

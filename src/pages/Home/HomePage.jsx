@@ -9,8 +9,8 @@ const HomePage = () => {
   return (
     <Container>
       <Title>
-        Hey there👋🏼! Here you can create your personal phonebook 📚 Just click
-        button "Register" or "Log in " first and you good to go.
+        Hey there ! With this application you can have your phonebook always
+        with you. Please create your account and manage your contacts.
       </Title>
     </Container>
   );

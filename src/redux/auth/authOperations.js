@@ -20,11 +20,18 @@ export const register = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/signup', credentials);
       token.set(data.token);
-      Notiflix.Notify.success('Great!Now you are registered 👍');
+      Notiflix.Notify.success('Great!Now you are registered 👍', {
+        position: 'center-top',
+      });
       return data;
     } catch (error) {
       return rejectWithValue(
-        Notiflix.Notify.failure("Please log in, you've been registered already")
+        Notiflix.Notify.failure(
+          "Please log in, you've been registered already",
+          {
+            position: 'center-top',
+          }
+        )
       );
     }
   }
@@ -36,12 +43,17 @@ export const logIn = createAsyncThunk(
     try {
       const { data } = await axios.post('/users/login', credentials);
       token.set(data.token);
-      Notiflix.Notify.success('Welcome to your personal page 🗓');
+      Notiflix.Notify.success('Welcome to your personal page 🗓', {
+        position: 'center-top',
+      });
       return data;
     } catch (error) {
       return rejectWithValue(
         Notiflix.Notify.failure(
-          'Oops,we dont have you. You should register first 😊'
+          'Oops,we dont have you. You should register first 😊',
+          {
+            position: 'center-top',
+          }
         )
       );
     }
@@ -53,7 +65,9 @@ export const logOut = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await axios.post('/users/logout');
-      Notiflix.Notify.success("Bye-bye 🙋‍♀️ You're successfully logged out!");
+      Notiflix.Notify.success("Bye-bye 🙋‍♀️ You're successfully logged out!", {
+        position: 'center-top',
+      });
       token.unset();
     } catch (error) {
       return rejectWithValue(error.message);

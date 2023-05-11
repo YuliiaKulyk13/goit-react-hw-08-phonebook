@@ -9,8 +9,13 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-weight: 500;
-  font-size: 35px;
-  text-align: 'center';
-  color: grey;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-style: normal;
+  text-align: center;
+  font-weight: 600;
+  font-size: 30px;
+  color: #f2eaea;
+  line-height: 2.5;
 `;

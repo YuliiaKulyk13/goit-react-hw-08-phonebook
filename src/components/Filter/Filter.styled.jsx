@@ -2,23 +2,20 @@ import styled from 'styled-components';
 
 export const Input = styled.input`
   padding: 3px;
-  border-radius: 8px;
-  margin-left: 10px;
-  height: 20px;
-  width: auto;
+  margin-left: 20px;
+  height: 25px;
+  width: 170px;
   cursor: pointer;
-  &:hover,
-  &:focus {
-    transform: scale(1.1);
-    box-shadow: 10px 5px 5px grey;
-  }
 `;
 
-export const Label = styled.label`
+export const Label = styled.title`
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  margin: 0;
+  margin-bottom: 10px;
   font-weight: 500;
-  font-size: 20px;
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  color: #494a4c;
+  font-size: 17px;
+  line-height: 1.54;
+  color: white;
 `;
