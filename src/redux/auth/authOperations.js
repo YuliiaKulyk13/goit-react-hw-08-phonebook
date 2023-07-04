@@ -3,7 +3,7 @@ import Notiflix from 'notiflix';
 
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'http://localhost:8080';
 
 const token = {
   set(token) {
