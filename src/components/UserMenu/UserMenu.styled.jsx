@@ -35,3 +35,7 @@ export const LogOutBtn = styled.button`
     box-shadow: 10px 5px 5px grey;
   }
 `;
+
+// export const LinkStyled = styled.Link`
+//   color: white;
+// `;

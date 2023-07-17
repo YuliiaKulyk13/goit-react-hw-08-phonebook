@@ -94,3 +94,20 @@ export const refreshUser = createAsyncThunk(
     }
   }
 );
+
+export const updateAvatar = createAsyncThunk(
+  'auth/avatar',
+  async (file, { rejectWithValue }) => {
+    try {
+      const formData = new FormData();
+      formData.append('avatar', file);
+
+      const { data } = await axios.patch('/users/avatar', formData, {
+        headers: { 'content-type': 'multipart/form-data' },
+      });
+      return data.avatarUrl;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);

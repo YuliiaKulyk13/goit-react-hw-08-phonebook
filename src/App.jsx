@@ -7,6 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import { refreshUser } from 'redux/auth/authOperations';
 import authSelectors from 'redux/auth/authSelectors';
 import { Loader } from 'components/Loader/Loader';
+import ProfilePage from 'pages/ProfilePage/ProfilePage';
+import UpdateProfilePage from 'pages/ProfilePage/UpdateProfilePage';
 
 const HomePage = lazy(() => import('./pages/Home/HomePage'));
 const LoginPage = lazy(() => import('./pages/Login/LoginPage'));
@@ -46,6 +48,21 @@ export const App = () => {
           path="/contacts"
           element={
             <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute redirectTo="/login" component={<ProfilePage />} />
+          }
+        />
+        <Route
+          path="/profile/update"
+          element={
+            <PrivateRoute
+              redirectTo="/login"
+              component={<UpdateProfilePage />}
+            />
           }
         />
       </Route>

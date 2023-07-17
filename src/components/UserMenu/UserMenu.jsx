@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/authOperations';
 import authSelectors from 'redux/auth/authSelectors';
 import { Container, LogOutBtn, UserName } from './UserMenu.styled';
+import { Link } from 'react-router-dom';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.selectUserName);
-  // const email = useSelector(authSelectors.selectUserEmail);
+
   return (
     <Container>
       <UserName>Welcome, {name}</UserName>
-      {/* <p>Your email: {email}</p> */}
+      <Link to="/profile">Profile</Link>
       <LogOutBtn type="button" onClick={() => dispatch(logOut())}>
         Log out
       </LogOutBtn>
